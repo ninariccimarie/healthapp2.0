@@ -5,13 +5,13 @@ import grails.transaction.Transactional
 @Transactional
 class UserService {
 
-    def createUser(Integer age, String gender, Integer weight, Integer height, Integer systolic, Integer diastolic, Double exercise ) {
-        def user = new UserInfo(age:age, gender:gender,weight:weight,height:height,systolic:systolic,diastolic:diastolic,exercise:exercise)
+    def createUser(String name) {
+        def user = new User(name: name)
         user.save()
     }
 
     def fetchAllUsers() {
-        UserInfo.list()
+        User.list()
     }
 
     def fetchUser(Long id) {

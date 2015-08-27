@@ -14,9 +14,5 @@ class UrlMappings {
         "/api/v1/user"(controller:"user") {
         	action = [GET: "showAll", POST: "create"]
         }
-
-        "/api/v1/user/$userId"(controller:"user") {
-        	action = [GET: "show", PUT: "update"]
-        }
 	}
 }
