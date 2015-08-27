@@ -11,6 +11,8 @@ class UserInfo {
 
     Date dateCreated
 
+    static belongsTo = [user: User]
+
     static constraints = {
         age blank:false
         gender blank:false
