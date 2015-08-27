@@ -1,4 +1,5 @@
 import grails.converters.JSON
+import healthapp.User
 import healthapp.UserInfo
 
 class BootStrap {
@@ -14,6 +15,12 @@ class BootStrap {
 				systolic: user.systolic,
 				diastolic: user.diastolic,
 				exercise: user.exercise,
+			]
+		}
+		JSON.registerObjectMarshaller(User) { User user ->
+			return [
+				id: user.id,
+				name: user.name
 			]
 		}
     }
