@@ -7,20 +7,20 @@ class BootStrap {
     def init = { servletContext -> 
     	JSON.registerObjectMarshaller(UserInfo) { UserInfo user ->
 			return [
-				id: user.id,
 				age: user.age,
-				gender: user.gender,
 				weight: user.weight,
 				height: user.height,
 				systolic: user.systolic,
 				diastolic: user.diastolic,
 				exercise: user.exercise,
+				dateCreated: user.dateCreated.format('yyyy-MM-dd')
 			]
 		}
 		JSON.registerObjectMarshaller(User) { User user ->
 			return [
 				id: user.id,
-				name: user.name
+				name: user.name,
+				gender: user.gender.name()
 			]
 		}
     }

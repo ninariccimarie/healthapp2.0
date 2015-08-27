@@ -1,12 +1,14 @@
 package healthapp
 
 import grails.transaction.Transactional
+import healthapp.exception.UserNotFoundException
+import healthapp.type.Gender
 
 @Transactional
 class UserService {
 
-    def createUser(String name) {
-        def user = new User(name: name)
+    def createUser(String name, Gender gender) {
+        def user = new User(name: name, gender: gender)
         user.save()
     }
 
@@ -14,24 +16,28 @@ class UserService {
         User.list()
     }
 
-    def fetchUser(Long id) {
-        def user = UserInfo.get(id)
+    def fetchUserById(Long id) {
+        def user = User.get(id)
 
     	if (user) {
     		return user
     	} else {
-    		render "user not found"
+    		throw new UserNotFoundException()
     	}
     }
 
-    def updateUser(UserInfo user, Integer updateAge, String updateGender, Integer updateWeight, Integer updateHeight, Integer updateSystolic, Integer updateDiastolic, Double updateExercise) {
-        user.age = updateAge
-        user.gender = updateGender
-        user.weight = updateWeight
-        user.height = updateHeight
-        user.systolic = updateSystolic
-        user.diastolic = updateDiastolic
-        user.exercise = updateExercise
-        user.save()
+    def fetchUserInfo(User user) {
+        UserInfo.findAllByOwner(user)
+    }
+
+    def addUserInfo(User user, Integer updateAge, Integer updateWeight, Integer updateHeight, Integer updateSystolic, Integer updateDiastolic, Double updateExercise) {
+        def userInfo = new UserInfo(owner: user)
+        userInfo.age = updateAge
+        userInfo.weight = updateWeight
+        userInfo.height = updateHeight
+        userInfo.systolic = updateSystolic
+        userInfo.diastolic = updateDiastolic
+        userInfo.exercise = updateExercise
+        userInfo.save()
     }
 }

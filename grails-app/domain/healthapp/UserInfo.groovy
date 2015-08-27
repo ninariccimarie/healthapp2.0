@@ -2,7 +2,6 @@ package healthapp
 
 class UserInfo {
     Integer age
-    String gender
     Integer weight
     Integer height
     Integer systolic
@@ -11,11 +10,10 @@ class UserInfo {
 
     Date dateCreated
 
-    static belongsTo = [user: User]
+    static belongsTo = [owner: User]
 
     static constraints = {
         age blank:false
-        gender blank:false
         weight blank:false
         height blank:false
         systolic blank:false
