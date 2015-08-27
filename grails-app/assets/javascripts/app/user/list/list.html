@@ -1,0 +1,29 @@
+<div>
+	<table class="table">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>AGE</th>
+				<th>GENDER</th>
+				<th>WEIGHT</th>
+				<th>HEIGHT</th>
+				<th>SYSTOLIC</th>
+				<th>DIASTOLIC</th>
+				<th>EXERCISE LEVEL</th>
+			</tr>
+		</thead>
+	
+		<tbody>
+			<tr ng-repeat="e in users">
+				<td>{{e.id}}</td>
+				<td>{{e.age}}</td>
+				<td>{{e.gender}}</td>
+				<td>{{e.weight}}</td>
+				<td>{{e.height}}</td>
+				<td>{{e.systolic}}</td>
+				<td>{{e.diastolic}}</td>
+				<td>{{e.exercise}}</td>
+			</tr>	
+		</tbody>
+	</table>
+</div>
