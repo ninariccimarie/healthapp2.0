@@ -6,16 +6,16 @@ import grails.transaction.Transactional
 class UserService {
 
     def createUser(Integer age, String gender, Integer weight, Integer height, Integer systolic, Integer diastolic, Double exercise ) {
-    	def user = new User(age:age, gender:gender,weight:weight,height:height,systolic:systolic,diastolic:diastolic,exercise:exercise)
-    	user.save()
+        def user = new UserInfo(age:age, gender:gender,weight:weight,height:height,systolic:systolic,diastolic:diastolic,exercise:exercise)
+        user.save()
     }
 
     def fetchAllUsers() {
-    	User.list()
+        UserInfo.list()
     }
 
     def fetchUser(Long id) {
-    	def user = User.get(id)
+        def user = UserInfo.get(id)
 
     	if (user) {
     		return user
@@ -24,7 +24,7 @@ class UserService {
     	}
     }
 
-    def updateUser(User user, Integer updateAge, String updateGender, Integer updateWeight, Integer updateHeight, Integer updateSystolic, Integer updateDiastolic, Double updateExercise) {
+    def updateUser(UserInfo user, Integer updateAge, String updateGender, Integer updateWeight, Integer updateHeight, Integer updateSystolic, Integer updateDiastolic, Double updateExercise) {
         user.age = updateAge
         user.gender = updateGender
         user.weight = updateWeight
