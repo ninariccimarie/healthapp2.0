@@ -13,7 +13,11 @@ class BootStrap {
 				systolic: user.systolic,
 				diastolic: user.diastolic,
 				exercise: user.exercise,
-				dateCreated: user.dateCreated.format('yyyy-MM-dd')
+				dateCreated: user.dateCreated.format('yyyy-MM-dd'),
+
+				bmi: user.bmi,
+				bmr: user.bmr,
+				dkr: user.dkr
 			]
 		}
 		JSON.registerObjectMarshaller(User) { User user ->
@@ -23,6 +27,8 @@ class BootStrap {
 				gender: user.gender.name()
 			]
 		}
+
+		new User(name: 'Nina', gender: 'FEMALE').save(flush:true)
     }
     def destroy = {
     }
