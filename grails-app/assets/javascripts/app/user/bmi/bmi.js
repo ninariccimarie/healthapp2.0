@@ -5,21 +5,19 @@
 		.module('app.user.bmi')
 		.controller('Bmi', Bmi);
 
-	Bmi.$inject = ['$scope', 'BmiService'];
+	Bmi.$inject = ['$scope', '$http'];
 
-	function Bmi($scope, BmiService) {
-
-        /*$scope.answer = [];
-
-        BmiService.getBmi()
-            .success(function(data){
-                $scope.answer = data;
-        });
-
-        console.log($scope.answer);*/
+	function Bmi($scope, $http) {
+        $scope.user = '';
 
         $scope.compute = function(){
-            console.log('New Data is sent to DATABASE!');
+            console.log('form submitted!');
+
+            $http.post('/api/v1/user', $scope.userInfo)
+                .success(function(data){
+                    $scope.user = data.user;
+            });
+
         }
 	}
 
