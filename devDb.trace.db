@@ -1,0 +1,12 @@
+08-27 15:52:59 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "USER_INFO" not found; SQL statement:
+alter table user_info drop constraint FK_gmyseoh3ssio9ycin05scvggs if exists [42102-176]
+08-28 12:00:14 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "USER_INFO" not found; SQL statement:
+alter table user_info drop constraint FK_gmyseoh3ssio9ycin05scvggs if exists [42102-176]
+08-28 12:17:18 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "USER_INFO" not found; SQL statement:
+alter table user_info drop constraint FK_gmyseoh3ssio9ycin05scvggs if exists [42102-176]
+08-28 12:47:13 jdbc[12]: exception
+org.h2.jdbc.JdbcSQLException: Table "USER_INFO" not found; SQL statement:
+alter table user_info drop constraint FK_gmyseoh3ssio9ycin05scvggs if exists [42102-176]
