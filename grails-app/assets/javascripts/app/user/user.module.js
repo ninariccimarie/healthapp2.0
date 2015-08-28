@@ -7,8 +7,7 @@
 		'app.user.bprate',
 		'app.user.dkr',
 		'app.user.list',
-		'app.data',
-        'service.core'
+		'app.data'
 	]);
 
 })();

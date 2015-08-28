@@ -4,10 +4,6 @@
 <!-- app -->
 //= require app/app.module.js
 
-<!-- angular service -->
-//= require services/service.module.js
-//= require services/bmiService.js
-
 <!-- user -->
 //= require app/user/user.module.js
 //=require app/user/user.js
