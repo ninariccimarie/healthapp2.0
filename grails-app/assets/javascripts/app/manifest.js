@@ -10,6 +10,7 @@
 
 <!-- user -->
 //= require app/user/user.module.js
+//=require app/user/user.js
 
 <!-- data -->
 //= require app/data/data.module.js
