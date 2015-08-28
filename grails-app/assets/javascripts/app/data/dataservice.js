@@ -13,6 +13,7 @@
             function postInformation(userData){
                 return $http.post('/api/v1/user', userData);
             }
+
             return service;
 		});
 })();
