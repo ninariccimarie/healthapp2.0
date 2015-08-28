@@ -1,0 +1,50 @@
+<div ng-controller="Bmi">
+    <form ng-submit="compute()">
+        <table>
+            <tr>
+                <td><label>Name: </label></td>
+                <td><input type="text" name="name" ng-model="name"/></td>
+            </tr>
+            <tr>
+                <td><label>Age: </label></td>
+                <td><input type="text" name="age" ng-model="age"/></td>
+            </tr>
+            <tr>
+                <td><label>Gender: </label></td>
+                <td><input type="text" name="gender" ng-model="gender"/></td>
+            </tr>
+            <tr>
+                <td><label>Weight: </label></td>
+                <td><input type="text" name="weight" ng-model="weight"/></td>
+            </tr>
+            <tr>
+                <td><label>Height: </label></td>
+                <td><input type="text" name="height" ng-model="height"/></td>
+            </tr>
+            <tr>
+                <td><label>Systolic: </label></td>
+                <td><input type="text" name="systolic" ng-model="systolic"/></td>
+            </tr>
+            <tr>
+                <td><label>Diastolic: </label></td>
+                <td><input type="text" name="diastolic" ng-model="diastolic"/></td>
+            </tr>
+            <tr>
+                <td><label>Exercise Level: </label></td>
+                <td>
+                    <select ng-model="exercise" id="exercise">
+                        <option value="1.2">little to none</option>
+                        <option value="1.375">light exercise</option>
+                        <option value="1.55">moderate exercise</option>
+                        <option value="1.725">heavy exercise</option>
+                        <option value="1.9">very heavy exercise</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><button type="submit">Compute</button></td>
+            </tr>
+        </table>
+    </form>
+</div>
+

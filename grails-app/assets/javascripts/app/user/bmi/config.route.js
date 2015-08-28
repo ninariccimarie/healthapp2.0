@@ -5,9 +5,9 @@
 		.module('app.user.bmi')
 		.run(routeConfig);
 
-	routeConfig.$inject(routehelper) {
+	routeConfig.$inject(routehelper);
 		routehelper.configureRoutes(getRoutes());
-	}
+
 
 	function getRoutes() {
 		return [
