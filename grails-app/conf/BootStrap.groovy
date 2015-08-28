@@ -27,8 +27,6 @@ class BootStrap {
 				gender: user.gender.name()
 			]
 		}
-
-		new User(name: 'Nina', gender: 'FEMALE').save(flush:true)
     }
     def destroy = {
     }
