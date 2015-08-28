@@ -5,8 +5,15 @@
         .controller('UserController', ['$scope', '$http', 'dataservice', function($scope, $http, dataservice){
 
             $scope.getUser = function(){
-                $scope.user = '';
+                $scope.userData = {
+                    name: $scope.name,
+                    gender: $scope.gender
+                };
+
                 console.log('form submitted');
+                console.log($scope.name);
+                console.log($scope.gender);
+                console.log($scope.userData);
 
                 dataservice.postInformation($scope.userData)
                     .then(function(data){
