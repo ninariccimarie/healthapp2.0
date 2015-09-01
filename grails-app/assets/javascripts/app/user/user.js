@@ -3,7 +3,7 @@
 
     angular
         .module('app.user')
-        .controller('User', ['$scope', '$http', 'dataservice', function($scope, $http, dataservice){
+        .controller('User', ['$scope', '$http', '$window', 'dataservice', function($scope, $http, $window, dataservice){
 
             $scope.getUser = function(){
                 $scope.userData = {
@@ -19,14 +19,7 @@
                 dataservice.postInformation($scope.userData)
                     .then(function(data){
                         $scope.user = data.user;
-
                 });
-
-                dataservice.getUserById()
-                    .then(function(data){
-                        $scope.user = data;
-                        console.log($scope.user);
-                    })
             }
     }]);
 })();
