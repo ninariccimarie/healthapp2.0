@@ -6,33 +6,24 @@
 		.controller('UserInfo', ['$scope', '$http', '$window', 'dataservice', function($scope, $http, $window, dataservice){
 
 			$scope.getUserInfo = function(){
+
+                $scope.id = $window.localStorage.getItem('id');
+                console.log("The current id is: "+$scope.id);
+
                 console.log('Compute');
-
-                $scope.parsedAge = parseInt($scope.age, 10);
-                $scope.parsedWeight = parseInt($scope.weight, 10);
-                $scope.parsedHeight = parseInt($scope.height, 10);
-                $scope.parsedSystolic = parseInt($scope.height, 10);
-                $scope.parsedDiastolic = parseInt($scope.diastolic, 10);
-                $scope.parsedExercise = parseInt($scope.exercise, 10);
-
-                dataservice.getUserById()
-                    .then(function(data){
-                        console.log(data);
-                        console.log(data[0].id);
-                    });
-
 				$scope.userInfoData = {
-					age: $scope.parsedAge,
-					weight: $scope.parsedWeight,
-					height: $scope.parsedHeight,
-					systolic: $scope.parsedSystolic,
-					diastolic: $scope.parsedDiastolic,
-					exercise: $scope.parsedExercise
+					age: parseInt($scope.age, 10),
+					weight: parseInt($scope.weight, 10),
+					height: parseInt($scope.height, 10),
+					systolic: parseInt($scope.systolic, 10),
+					diastolic: parseInt($scope.diastolic, 10),
+					exercise: parseInt($scope.exercise, 10)
 				};
 
-				dataservice.postUserInfo(14, $scope.userInfoData)
+				dataservice.postUserInfo($scope.id, $scope.userInfoData)
 					.then(function(data){
-						$scope.user = data.user;
+                        $scope.users = data.user;
+                        $window.localStorage.removeItem('id');
 				})
 			}
 	}]);
