@@ -9,6 +9,7 @@
 			var service = {
                 postInformation: postInformation,
                 postUserInfo: postUserInfo,
+                getUserInfo: getUserInfo,
                 getUsers: getUsers,
                 getUserById: getUserById
             };
@@ -27,6 +28,10 @@
 
             function postUserInfo(id, userInfoData){
             	return $http.post('/api/v1/user/'+id+'/info', userInfoData);
+            }
+
+            function getUserInfo(id){
+                return $http.get('/api/v1/user/'+id+'/info');
             }
 
             return service;

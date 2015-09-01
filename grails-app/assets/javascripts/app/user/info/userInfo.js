@@ -24,7 +24,14 @@
 					.then(function(data){
                         $scope.users = data.user;
                         $window.localStorage.removeItem('id');
-				})
+				});
+
+                dataservice.getUserInfo($scope.id)
+                    .success(function(data){
+                        $scope.infos = data;
+
+                        console.log($scope.infos);
+                });
 			}
 	}]);
 })();
