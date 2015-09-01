@@ -6,6 +6,7 @@
 		'app.user.bmr',
 		'app.user.bprate',
 		'app.user.dkr',
+		'app.user.info',
 		'app.user.list',
 		'app.data'
 	]);

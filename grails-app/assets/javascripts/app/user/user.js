@@ -1,8 +1,9 @@
 (function(){
     'use strict';
 
-    angular.module('app.user')
-        .controller('UserController', ['$scope', '$http', 'dataservice', function($scope, $http, dataservice){
+    angular
+        .module('app.user')
+        .controller('User', ['$scope', '$http', 'dataservice', function($scope, $http, dataservice){
 
             $scope.getUser = function(){
                 $scope.userData = {
@@ -18,7 +19,14 @@
                 dataservice.postInformation($scope.userData)
                     .then(function(data){
                         $scope.user = data.user;
-                })
+
+                });
+
+                dataservice.getUserById()
+                    .then(function(data){
+                        $scope.user = data;
+                        console.log($scope.user);
+                    })
             }
     }]);
 })();
