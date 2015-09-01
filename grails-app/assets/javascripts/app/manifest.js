@@ -1,6 +1,6 @@
 <!-- angular -->
 //= require lib/bower-angular-route-master/angular-route.js
-//= require lib/angular-resource/angular-resource.js
+
 
 <!-- app -->
 //= require app/app.module.js
