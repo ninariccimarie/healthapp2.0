@@ -17,6 +17,13 @@ class UserController {
         respond(users)
     }
 
+    def showOne(String userId) {
+        def user = userService.fetchUserById(userId as Long)
+
+        response.status = HttpStatus.OK.value()
+        respond(user)
+    }
+
     def create() {
         def requestUser = request.JSON
 

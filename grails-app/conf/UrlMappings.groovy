@@ -18,5 +18,9 @@ class UrlMappings {
         "/api/v1/user/$userId/info"(controller:"user") {
             action = [GET: "showUserInfo", POST: "addUserInfo"]
         }
+
+        "/api/v1/user/$userId"(controller:"user") {
+            action = [GET: "showOne"]
+        }
 	}
 }
